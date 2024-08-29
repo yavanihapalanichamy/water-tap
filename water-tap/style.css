@@ -1,0 +1,58 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    padding: 50px;
+}
+#tank{
+    border: 1px solid black;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 400px;
+    width: 300px;
+    
+}
+#water{
+    background-color: skyblue;
+    height: 400px;
+    width: 300px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-top: 0.1px;
+}
+#tap{
+    position:relative;
+}
+#rectangle{
+    position: absolute;
+    width: 100px;
+    height: 10px;
+    background-color: brown;
+    left:300px;
+    bottom: 1px;
+}
+#touch{
+    position: absolute;
+    width: 22px;
+    height: 7px;
+    border: 1px solid black;
+    left: 394px;
+    bottom: 17px;
+}
+#square{
+    position: absolute;
+    width: 10px;
+    height: 40px;
+    background-color: brown;
+    left: 400px;
+    top: -18px;
+}
+#waterFlow{
+    position: absolute;
+    width: 10px;
+    height: 200px;
+    overflow: hidden;
+    left: 400px;
+    top: 10px;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- water container -->
+        <div id="tank">
+            <!-- waterEl -->
+            <div id="water"></div>
+        </div> 
+
+        <div id="tap">
+            <div id="rectangle"></div>
+            <div id="square"></div>
+            <!-- On/off tapOpenBtn -->
+            <button id="touch" onclick="openTap()"></button>
+            <div id="waterFlow"></div>
+        </div>
+    </div>
+
+    <script>   
+        var click=document.getElementById("touch");
+        var flowing=document.getElementById("waterFlow")
+        var waters=document.getElementById("water")
+        var tapStatus="OFF"
+        flowing.style.background="white";  
+        var height=400;
+        var Margin=0;
+
+        var flow="ON"
+        function openTap(){
+            if(tapStatus=="OFF"){
+                click.style.background="green"
+                tapStatus="ON"
+                waters.style.borderTopLeftRadius="0px"
+                waters.style.borderTopRightRadius="0px"
+
+                if(height>0)
+                {
+                    flowing.style.background="skyblue"
+                    var intervalId=setInterval(function(){
+                        height=height-1
+                        Margin=Margin+1 
+                        waters.style.marginTop=Margin+"px"
+                        waters.style.height=height+"px"
+
+                        if(height==0 || Margin==400 || flow=="OFF"){
+                            clearInterval(intervalId);
+                            flowing.style.background="white";
+                            flow="ON"
+                        }
+
+                  },100)
+                }
+                
+            }
+            else if(tapStatus=="ON"){
+                    flow="OFF"
+                    click.style.background="red"
+                    tapStatus="OFF"
+                    flowing.style.background="white";
+                }
+        }
+    </script>
+</body>
+</html>
